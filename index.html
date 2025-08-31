@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deep Laliyawala | Full-Stack Developer Portfolio</title>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Laliyawala | Full-Stack Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <!-- Navbar -->
@@ -16,99 +13,119 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-indigo-600">Deep Laliyawala</h1>
       <div class="space-x-6 hidden md:flex">
-        <a href="#about" class="hover:text-indigo-600">About</a>
-        <a href="#experience" class="hover:text-indigo-600">Experience</a>
-        <a href="#skills" class="hover:text-indigo-600">Skills</a>
-        <a href="#projects" class="hover:text-indigo-600">Projects</a>
-        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        <a href="#about" class="hover:text-indigo-600 transition">About</a>
+        <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
+        <a href="#skills" class="hover:text-indigo-600 transition">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-600 to-purple-700 text-white px-6">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">Hi, I'm Deep 👋</h1>
-    <p class="text-xl md:text-2xl mb-6">Full-Stack Developer | .NET | SQL | Data Migration</p>
-    <a href="https://www.linkedin.com/in/deep-laliyawala5/" target="_blank" class="px-8 py-3 bg-white text-indigo-700 rounded-full font-semibold shadow hover:bg-gray-200 transition">Connect on LinkedIn</a>
+  <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-600 to-purple-700 text-white px-6 overflow-hidden">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Hi, I'm Deep 👋</h1>
+    <p class="text-xl md:text-2xl mb-6 animate__animated animate__fadeInUp animate__delay-1s">Full-Stack Developer</p>
+    <a href="https://www.linkedin.com/in/deep-laliyawala5/" target="_blank"
+       class="px-8 py-3 bg-white text-indigo-700 rounded-full font-semibold shadow hover:scale-105 transform transition duration-300">Connect on LinkedIn</a>
   </section>
 
+  <!-- Scroll Animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.scroll-item').forEach(el => observer.observe(el));
+    });
+  </script>
+
   <!-- About -->
-  <section id="about" class="max-w-5xl mx-auto py-20 px-6">
+  <section id="about" class="max-w-5xl mx-auto py-20 px-6 scroll-item opacity-0">
     <h2 class="text-4xl font-bold mb-6 text-indigo-600">About Me</h2>
     <p class="text-lg leading-relaxed text-gray-700">
-      I am a passionate Full-Stack Developer with expertise in building scalable applications, data migration, and enterprise-grade .NET solutions. I love solving complex problems, optimizing performance, and creating seamless user experiences. With experience in both backend and frontend technologies, I bridge the gap between technical implementation and business needs.
+      A passionate Full-Stack Developer building robust .NET & SQL solutions, data migrations, and efficient web apps.
     </p>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="bg-white py-20 px-6">
+  <section id="experience" class="bg-white py-20 px-6 scroll-item opacity-0">
     <h2 class="text-4xl font-bold mb-12 text-center text-indigo-600">Experience</h2>
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+      <!-- Cards -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 duration-300">
         <h3 class="text-2xl font-semibold">Application Developer</h3>
         <p class="text-gray-600">JFE Shoji Power Canada Inc. | Burlington, ON</p>
         <ul class="list-disc ml-6 mt-3 text-gray-700">
-          <li>Designed and maintained enterprise .NET applications.</li>
-          <li>Led SQL Data Migration ensuring high accuracy.</li>
-          <li>Collaborated with teams to deliver scalable business solutions.</li>
+          <li>Enterprise .NET development</li>
+          <li>SQL data migration leader</li>
+          <li>Cross-functional scalable solutions</li>
         </ul>
       </div>
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 duration-300">
         <h3 class="text-2xl font-semibold">Salesforce Developer</h3>
         <p class="text-gray-600">Aani Brothers Infotech | India</p>
         <ul class="list-disc ml-6 mt-3 text-gray-700">
-          <li>Developed reusable Salesforce & Vlocity components.</li>
-          <li>Enhanced workflows with Omniscript & integrations.</li>
-          <li>Delivered enterprise-level solutions for clients.</li>
+          <li>Custom Salesforce/Vlocity components</li>
+          <li>Optimized Omniscript workflows</li>
+          <li>Enterprise delivery for gaming clients</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="max-w-5xl mx-auto py-20 px-6">
+  <section id="skills" class="max-w-5xl mx-auto py-20 px-6 scroll-item opacity-0">
     <h2 class="text-4xl font-bold mb-10 text-indigo-600">Skills</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <!-- Skill pills -->
       <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">.NET / C#</span>
       <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">SQL / Data Migration</span>
       <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">JavaScript / React</span>
-      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">API Development</span>
-      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Cloud / Azure</span>
-      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Agile / Scrum</span>
+      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">API Design</span>
+      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Azure / Cloud</span>
+      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Agile & Teamwork</span>
       <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Problem Solving</span>
-      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">Team Collaboration</span>
+      <span class="bg-indigo-100 text-indigo-700 px-4 py-3 rounded-lg font-semibold">UI/UX Sensibility</span>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="bg-white py-20 px-6">
+  <section id="projects" class="bg-white py-20 px-6 scroll-item opacity-0">
     <h2 class="text-4xl font-bold mb-12 text-center text-indigo-600">Projects</h2>
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <!-- Project cards -->
       <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg transition p-6">
-        <h3 class="text-xl font-semibold mb-2">Enterprise Data Migration</h3>
-        <p class="text-gray-700">Led a large-scale SQL migration project, ensuring data accuracy across multiple enterprise systems.</p>
+        <h3 class="text-xl font-semibold mb-2">Enterprise SQL Migration</h3>
+        <p class="text-gray-700">High-fidelity SQL migration across systems, with guarantees on data integrity.</p>
       </div>
       <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg transition p-6">
-        <h3 class="text-xl font-semibold mb-2">.NET Application Suite</h3>
-        <p class="text-gray-700">Developed a suite of .NET applications to improve operational efficiency for manufacturing teams.</p>
+        <h3 class="text-xl font-semibold mb-2">.NET App Suite</h3>
+        <p class="text-gray-700">Set of .NET apps enhancing operational workflows in manufacturing.</p>
       </div>
       <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg transition p-6">
-        <h3 class="text-xl font-semibold mb-2">Salesforce Customization</h3>
-        <p class="text-gray-700">Created custom Salesforce components and workflows for the gaming & lottery industry.</p>
+        <h3 class="text-xl font-semibold mb-2">Salesforce Workflows</h3>
+        <p class="text-gray-700">Custom Salesforce/Vlocity automation for the gaming sector.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 text-center">
+  <section id="contact" class="py-20 px-6 text-center scroll-item opacity-0">
     <h2 class="text-4xl font-bold mb-6 text-indigo-600">Get in Touch</h2>
     <p class="text-lg">📧 <a href="mailto:your.email@example.com" class="text-indigo-700 underline">your.email@example.com</a></p>
     <p class="text-lg">🔗 <a href="https://www.linkedin.com/in/deep-laliyawala5/" target="_blank" class="text-indigo-700 underline">LinkedIn</a></p>
     <p class="text-lg">📄 <a href="#" class="text-indigo-700 underline">Download Resume (PDF)</a></p>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white py-6 text-center">
-    <p>© 2025 Deep Laliyawala | Full-Stack Developer Portfolio</p>
+    <p>© 2025 Deep Laliyawala | Full-Stack Developer</p>
   </footer>
 </body>
 </html>
